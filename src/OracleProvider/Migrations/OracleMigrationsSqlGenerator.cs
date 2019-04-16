@@ -588,7 +588,8 @@ END;";
             {
                 builder
                     .Append("CONSTRAINT ")
-                    .Append(Dependencies.SqlGenerationHelper.DelimitIdentifier(operation.Name))
+                    //限制长度为30
+                    .Append(Dependencies.SqlGenerationHelper.DelimitIdentifier(operation.Name).Substring(0,30))
                     .Append(" ");
             }
 

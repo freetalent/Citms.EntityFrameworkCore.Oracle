@@ -24,8 +24,16 @@ namespace Microsoft.EntityFrameworkCore.Oracle.Storage.Internal
             {
                 name = name.Substring(1);
             }
-
-            return ":" + name;
+            
+            var parameterName= ":" + name;
+            if (parameterName.Length > 30)
+            {
+                return parameterName.Substring(0, 30);
+            }
+            else
+            {
+                return parameterName;
+            }
         }
 
         public override void GenerateParameterName(StringBuilder builder, string name)

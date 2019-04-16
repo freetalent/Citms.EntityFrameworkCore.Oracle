@@ -3,19 +3,20 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Citms.EntityFrameworkCore.Oracle</AssemblyName>
     <RootNamespace>Citms.EntityFrameworkCore.Oracle</RootNamespace>
-    <Authors>焰尾迭</Authors>
-    <Company>武汉中科通达高新技术股份有限公司</Company>
+    <Authors>EricXu</Authors>
+    <Company></Company>
     <Product>Microsoft Entity Framework Core</Product>
     <PackageTags>Entity Framework Core;entity-framework-core;EF;Data;O/RM;EntityFramework;EntityFrameworkCore;EFCore;Oracle</PackageTags>
     <RepositoryType>git</RepositoryType>
-    <Copyright>© Citms. All rights reserved.</Copyright>
+    <Copyright></Copyright>
     <Description>Oracle database provider for Entity Framework Core.</Description>
-    <RepositoryUrl>https://github.com/CrazyJson/Citms.EntityFrameworkCore.Oracle</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/CrazyJson/Citms.EntityFrameworkCore.Oracle</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/freetalent/Citms.EntityFrameworkCore.Oracle</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/freetalent/Citms.EntityFrameworkCore.Oracle</PackageProjectUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.7</Version>
-    <FileVersion>1.0.7.0</FileVersion>
-    <AssemblyVersion>1.0.7.0</AssemblyVersion>
+    <Version>1.0.8</Version>
+    <FileVersion>1.0.8.0</FileVersion>
+    <AssemblyVersion>1.0.8.0</AssemblyVersion>
+    <PackageId>Hr.EntityFrameworkCore.Oracle</PackageId>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <LangVersion>latest</LangVersion>

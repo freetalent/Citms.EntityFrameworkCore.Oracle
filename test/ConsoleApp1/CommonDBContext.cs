@@ -18,7 +18,7 @@ namespace ConsoleApp1
             var logger = new LoggerFactory();
             logger.AddConsole();
             optionsBuilder.UseLoggerFactory(logger);
-            optionsBuilder.UseOracle("DATA SOURCE=192.168.0.245:1521/tjims;PASSWORD=citms;PERSIST SECURITY INFO=True;USER ID=hsepp");
+            optionsBuilder.UseOracle("DATA SOURCE=192.168.1.102:1521/ZSTDCBUTF;PASSWORD=MZGXPT;PERSIST SECURITY INFO=True;USER ID=MZGXPT");
             base.OnConfiguring(optionsBuilder);
         }
 
