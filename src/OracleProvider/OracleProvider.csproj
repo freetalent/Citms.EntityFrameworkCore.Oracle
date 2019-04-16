@@ -13,9 +13,9 @@
     <RepositoryUrl>https://github.com/freetalent/Citms.EntityFrameworkCore.Oracle</RepositoryUrl>
     <PackageProjectUrl>https://github.com/freetalent/Citms.EntityFrameworkCore.Oracle</PackageProjectUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.8</Version>
-    <FileVersion>1.0.8.0</FileVersion>
-    <AssemblyVersion>1.0.8.0</AssemblyVersion>
+    <Version>1.0.9</Version>
+    <FileVersion>1.0.9.0</FileVersion>
+    <AssemblyVersion>1.0.9.0</AssemblyVersion>
     <PackageId>Hr.EntityFrameworkCore.Oracle</PackageId>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

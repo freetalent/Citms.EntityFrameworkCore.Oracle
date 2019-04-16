@@ -586,10 +586,15 @@ END;";
 
             if (operation.Name != null)
             {
+                var constrainName = Dependencies.SqlGenerationHelper.DelimitIdentifier(operation.Name);
+                if (constrainName.Length > 30)
+                {
+                    constrainName = constrainName.Substring(0, 30) + "\"";
+                }
                 builder
                     .Append("CONSTRAINT ")
                     //限制长度为30
-                    .Append(Dependencies.SqlGenerationHelper.DelimitIdentifier(operation.Name).Substring(0,30))
+                    .Append(constrainName)
                     .Append(" ");
             }
 
