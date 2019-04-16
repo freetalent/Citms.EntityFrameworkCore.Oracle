@@ -12,7 +12,7 @@ namespace Microsoft.EntityFrameworkCore.Oracle.Metadata.Conventions.Internal
     {
         public virtual InternalModelBuilder Apply(InternalModelBuilder modelBuilder)
         {
-            modelBuilder.Oracle(ConfigurationSource.Convention).ValueGenerationStrategy(OracleValueGenerationStrategy.IdentityColumn);
+            modelBuilder.Oracle(ConfigurationSource.Convention).ValueGenerationStrategy(OracleValueGenerationStrategy.SequenceHiLo);
 
             return modelBuilder;
         }
