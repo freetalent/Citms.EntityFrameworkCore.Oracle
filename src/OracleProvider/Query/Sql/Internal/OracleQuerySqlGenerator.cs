@@ -131,17 +131,22 @@ namespace Microsoft.EntityFrameworkCore.Oracle.Query.Sql.Internal
 
             if (RequiresRowNumberPaging(selectExpression))
             {
-                Sql.AppendLine().Append(")").Append(" WHERE ");
+                Sql.AppendLine().Append(") \"_ss_x_1_\"");
+
                 if (selectExpression.Limit != null)
                 {
-                    Sql.Append("rownum <=");
+                    Sql.Append(" WHERE ROWNUM <=");
                     Visit(selectExpression.Limit);
+                    if (selectExpression.Offset != null)
+                    {
+                        Sql.Append("+");
+                        Visit(selectExpression.Offset);
+                    }
+                    Sql.Append(") \"_ss_x_2_\" ");
                 }
-                if (selectExpression.Limit != null)
-                {
-                    Sql.Append(" and ");
-                }
-                Sql.Append(" RN >  ");
+
+
+                Sql.AppendLine("WHERE \"_ss_x_2_\".RNUM >");
                 if (selectExpression.Offset == null)
                 {
                     Sql.Append("0");
@@ -172,7 +177,8 @@ namespace Microsoft.EntityFrameworkCore.Oracle.Query.Sql.Internal
 
             if (RequiresRowNumberPaging(selectExpression))
             {
-                Sql.Append("SELECT * FROM(").AppendLine().Append("    ");
+                Sql.Append("SELECT * FROM(");
+                Sql.Append("SELECT \"_ss_x_1_\".*, ROWNUM RNUM FROM (").AppendLine().Append("    "); ;
             }
 
             Sql.Append("SELECT ");
@@ -208,10 +214,10 @@ namespace Microsoft.EntityFrameworkCore.Oracle.Query.Sql.Internal
 
                 projectionAdded = true;
 
-                if (RequiresRowNumberPaging(selectExpression))
-                {
-                    Sql.Append(",rownum RN ");
-                }
+                //if (RequiresRowNumberPaging(selectExpression))
+                //{
+                //    Sql.Append(",rownum RN ");
+                //}
             }
 
             if (!projectionAdded)
